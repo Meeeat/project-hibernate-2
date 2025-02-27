@@ -20,7 +20,7 @@ public class Category {
     private Instant lastUpdate;
 
     @OneToMany(mappedBy = "category")
-    private Set<com.module4.hibernate2.entities_auto.FilmCategory> filmCategories = new LinkedHashSet<>();
+    private Set<FilmCategory> filmCategories = new LinkedHashSet<>();
 
     public Short getId() {
         return id;
@@ -46,11 +46,11 @@ public class Category {
         this.lastUpdate = lastUpdate;
     }
 
-    public Set<com.module4.hibernate2.entities_auto.FilmCategory> getFilmCategories() {
+    public Set<FilmCategory> getFilmCategories() {
         return filmCategories;
     }
 
-    public void setFilmCategories(Set<com.module4.hibernate2.entities_auto.FilmCategory> filmCategories) {
+    public void setFilmCategories(Set<FilmCategory> filmCategories) {
         this.filmCategories = filmCategories;
     }
 

@@ -36,7 +36,7 @@ public class Rental {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "staff_id", nullable = false)
-    private com.module4.hibernate2.entities_auto.Staff staff;
+    private Staff staff;
 
     @Column(name = "last_update", nullable = false)
     private Instant lastUpdate;
@@ -84,11 +84,11 @@ public class Rental {
         this.returnDate = returnDate;
     }
 
-    public com.module4.hibernate2.entities_auto.Staff getStaff() {
+    public Staff getStaff() {
         return staff;
     }
 
-    public void setStaff(com.module4.hibernate2.entities_auto.Staff staff) {
+    public void setStaff(Staff staff) {
         this.staff = staff;
     }
 

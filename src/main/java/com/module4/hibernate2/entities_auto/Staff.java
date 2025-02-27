@@ -34,7 +34,7 @@ public class Staff {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "store_id", nullable = false)
-    private com.module4.hibernate2.entities_auto.Store store;
+    private Store store;
 
     @Column(name = "active", nullable = false)
     private Boolean active = false;
@@ -55,7 +55,7 @@ public class Staff {
     private Set<Rental> rentals = new LinkedHashSet<>();
 
     @OneToOne(mappedBy = "managerStaff")
-    private com.module4.hibernate2.entities_auto.Store store_m;
+    private Store store_m;
 
     public Short getId() {
         return id;
@@ -105,11 +105,11 @@ public class Staff {
         this.email = email;
     }
 
-    public com.module4.hibernate2.entities_auto.Store getStore() {
+    public Store getStore() {
         return store;
     }
 
-    public void setStore(com.module4.hibernate2.entities_auto.Store store) {
+    public void setStore(Store store) {
         this.store = store;
     }
 
@@ -161,11 +161,11 @@ public class Staff {
         this.rentals = rentals;
     }
 
-    public com.module4.hibernate2.entities_auto.Store getStore_m() {
+    public Store getStore_m() {
         return store_m;
     }
 
-    public void setStore_m(com.module4.hibernate2.entities_auto.Store store_m) {
+    public void setStore_m(Store store_m) {
         this.store_m = store_m;
     }
 

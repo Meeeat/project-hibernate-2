@@ -24,12 +24,12 @@ public class Payment {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "staff_id", nullable = false)
-    private com.module4.hibernate2.entities_auto.Staff staff;
+    private Staff staff;
 
     @ManyToOne(fetch = FetchType.LAZY)
     @OnDelete(action = OnDeleteAction.SET_NULL)
     @JoinColumn(name = "rental_id")
-    private com.module4.hibernate2.entities_auto.Rental rental;
+    private Rental rental;
 
     @Column(name = "amount", nullable = false, precision = 5, scale = 2)
     private BigDecimal amount;
@@ -56,19 +56,19 @@ public class Payment {
         this.customer = customer;
     }
 
-    public com.module4.hibernate2.entities_auto.Staff getStaff() {
+    public Staff getStaff() {
         return staff;
     }
 
-    public void setStaff(com.module4.hibernate2.entities_auto.Staff staff) {
+    public void setStaff(Staff staff) {
         this.staff = staff;
     }
 
-    public com.module4.hibernate2.entities_auto.Rental getRental() {
+    public Rental getRental() {
         return rental;
     }
 
-    public void setRental(com.module4.hibernate2.entities_auto.Rental rental) {
+    public void setRental(Rental rental) {
         this.rental = rental;
     }
 

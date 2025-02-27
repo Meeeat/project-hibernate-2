@@ -21,7 +21,7 @@ public class City {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "country_id", nullable = false)
-    private com.module4.hibernate2.entities_auto.Country country;
+    private Country country;
 
     @Column(name = "last_update", nullable = false)
     private Instant lastUpdate;
@@ -45,11 +45,11 @@ public class City {
         this.city = city;
     }
 
-    public com.module4.hibernate2.entities_auto.Country getCountry() {
+    public Country getCountry() {
         return country;
     }
 
-    public void setCountry(com.module4.hibernate2.entities_auto.Country country) {
+    public void setCountry(Country country) {
         this.country = country;
     }
 

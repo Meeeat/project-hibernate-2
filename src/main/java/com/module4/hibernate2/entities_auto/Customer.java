@@ -20,7 +20,7 @@ public class Customer {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "store_id", nullable = false)
-    private com.module4.hibernate2.entities_auto.Store store;
+    private Store store;
 
     @Column(name = "first_name", nullable = false, length = 45)
     private String firstName;
@@ -45,10 +45,10 @@ public class Customer {
     private Instant lastUpdate;
 
     @OneToMany(mappedBy = "customer")
-    private Set<com.module4.hibernate2.entities_auto.Payment> payments = new LinkedHashSet<>();
+    private Set<Payment> payments = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "customer")
-    private Set<com.module4.hibernate2.entities_auto.Rental> rentals = new LinkedHashSet<>();
+    private Set<Rental> rentals = new LinkedHashSet<>();
 
     public Integer getId() {
         return id;
@@ -58,11 +58,11 @@ public class Customer {
         this.id = id;
     }
 
-    public com.module4.hibernate2.entities_auto.Store getStore() {
+    public Store getStore() {
         return store;
     }
 
-    public void setStore(com.module4.hibernate2.entities_auto.Store store) {
+    public void setStore(Store store) {
         this.store = store;
     }
 
@@ -122,19 +122,19 @@ public class Customer {
         this.lastUpdate = lastUpdate;
     }
 
-    public Set<com.module4.hibernate2.entities_auto.Payment> getPayments() {
+    public Set<Payment> getPayments() {
         return payments;
     }
 
-    public void setPayments(Set<com.module4.hibernate2.entities_auto.Payment> payments) {
+    public void setPayments(Set<Payment> payments) {
         this.payments = payments;
     }
 
-    public Set<com.module4.hibernate2.entities_auto.Rental> getRentals() {
+    public Set<Rental> getRentals() {
         return rentals;
     }
 
-    public void setRentals(Set<com.module4.hibernate2.entities_auto.Rental> rentals) {
+    public void setRentals(Set<Rental> rentals) {
         this.rentals = rentals;
     }
 

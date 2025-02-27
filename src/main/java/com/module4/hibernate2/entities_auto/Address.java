@@ -27,7 +27,7 @@ public class Address {
 
     @ManyToOne(fetch = FetchType.LAZY, optional = false)
     @JoinColumn(name = "city_id", nullable = false)
-    private com.module4.hibernate2.entities_auto.City city;
+    private City city;
 
     @Column(name = "postal_code", length = 10)
     private String postalCode;
@@ -39,13 +39,13 @@ public class Address {
     private Instant lastUpdate;
 
     @OneToMany(mappedBy = "address")
-    private Set<com.module4.hibernate2.entities_auto.Customer> customers = new LinkedHashSet<>();
+    private Set<Customer> customers = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "address")
-    private Set<com.module4.hibernate2.entities_auto.Staff> staff = new LinkedHashSet<>();
+    private Set<Staff> staff = new LinkedHashSet<>();
 
     @OneToMany(mappedBy = "address")
-    private Set<com.module4.hibernate2.entities_auto.Store> stores = new LinkedHashSet<>();
+    private Set<Store> stores = new LinkedHashSet<>();
 
     public Integer getId() {
         return id;
@@ -79,11 +79,11 @@ public class Address {
         this.district = district;
     }
 
-    public com.module4.hibernate2.entities_auto.City getCity() {
+    public City getCity() {
         return city;
     }
 
-    public void setCity(com.module4.hibernate2.entities_auto.City city) {
+    public void setCity(City city) {
         this.city = city;
     }
 
@@ -111,27 +111,27 @@ public class Address {
         this.lastUpdate = lastUpdate;
     }
 
-    public Set<com.module4.hibernate2.entities_auto.Customer> getCustomers() {
+    public Set<Customer> getCustomers() {
         return customers;
     }
 
-    public void setCustomers(Set<com.module4.hibernate2.entities_auto.Customer> customers) {
+    public void setCustomers(Set<Customer> customers) {
         this.customers = customers;
     }
 
-    public Set<com.module4.hibernate2.entities_auto.Staff> getStaff() {
+    public Set<Staff> getStaff() {
         return staff;
     }
 
-    public void setStaff(Set<com.module4.hibernate2.entities_auto.Staff> staff) {
+    public void setStaff(Set<Staff> staff) {
         this.staff = staff;
     }
 
-    public Set<com.module4.hibernate2.entities_auto.Store> getStores() {
+    public Set<Store> getStores() {
         return stores;
     }
 
-    public void setStores(Set<com.module4.hibernate2.entities_auto.Store> stores) {
+    public void setStores(Set<Store> stores) {
         this.stores = stores;
     }
 

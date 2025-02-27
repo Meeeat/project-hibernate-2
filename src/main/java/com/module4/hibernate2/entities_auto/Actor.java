@@ -26,7 +26,7 @@ public class Actor {
     private Instant lastUpdate;
 
     @OneToMany(mappedBy = "actor")
-    private Set<com.module4.hibernate2.entities_auto.FilmActor> filmActors = new LinkedHashSet<>();
+    private Set<FilmActor> filmActors = new LinkedHashSet<>();
 
     public Integer getId() {
         return id;
@@ -60,11 +60,11 @@ public class Actor {
         this.lastUpdate = lastUpdate;
     }
 
-    public Set<com.module4.hibernate2.entities_auto.FilmActor> getFilmActors() {
+    public Set<FilmActor> getFilmActors() {
         return filmActors;
     }
 
-    public void setFilmActors(Set<com.module4.hibernate2.entities_auto.FilmActor> filmActors) {
+    public void setFilmActors(Set<FilmActor> filmActors) {
         this.filmActors = filmActors;
     }
 
