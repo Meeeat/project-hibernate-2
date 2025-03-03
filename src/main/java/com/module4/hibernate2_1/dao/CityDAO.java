@@ -13,9 +13,9 @@ public class CityDAO extends BaseDAOImpl<City, Short> {
     public City findByNameAndCountry(String name, Country country) {
         try (Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
 
-            String s = "FROM City WHERE city = :name AND country = :country";
+            String query = "FROM City WHERE city = :name AND country = :country";
 
-            return session.createQuery(s, City.class)
+            return session.createQuery(query, City.class)
                     .setParameter("name", name)
                     .setParameter("country", country)
                     .uniqueResult();

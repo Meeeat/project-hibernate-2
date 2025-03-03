@@ -12,9 +12,9 @@ public class CountryDAO extends BaseDAOImpl<Country, Short> {
     public Country findByName(String name) {
         try (Session session = HibernateSessionFactory.getSessionFactory().openSession()) {
 
-            String s = "FROM Country WHERE country = :name";
+            String query = "FROM Country WHERE country = :name";
 
-            return session.createQuery(s, Country.class)
+            return session.createQuery(query, Country.class)
                     .setParameter("name", name)
                     .uniqueResult();
         }

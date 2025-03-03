@@ -12,11 +12,14 @@ public class Main {
         runCustomerService();
         runRentalService();
 
+
     }
 
     private static void runRentalService() {
         RentalService rentalService = new RentalService();
         rentalService.returnRentedFilm(11593, (byte) 1, new BigDecimal("5.00"));
+
+        rentalService.rentInventory(1, 1, (byte) 1, new BigDecimal("10.00"));
     }
 
     private static void runCustomerService() {
